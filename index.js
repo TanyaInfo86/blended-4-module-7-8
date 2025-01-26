@@ -103,21 +103,38 @@
 //     event.target.removeEventListener('click', setBgGreen);
 // }
 // task-9
-const list = document.querySelector("ol");
-const btn = document.querySelector("#btn");
+// const list = document.querySelector("ol");
+// const btn = document.querySelector("#btn");
 
-btn.addEventListener("click", createListItem);
-list.addEventListener("click", addExsMark);
+// btn.addEventListener("click", createListItem);
+// list.addEventListener("click", addExsMark);
 
-function createListItem() {
-  const newLi = document.createElement("li");
-  newLi.textContent = "пункт";
-  list.appendChild(newLi);
+// function createListItem() {
+//   const newLi = document.createElement("li");
+//   newLi.textContent = "пункт";
+//   list.appendChild(newLi);
+// }
+
+// function addExsMark(event) {
+//   if (event.target.nodeName !== "LI") {
+//     return;
+//   }
+//   event.target.textContent += "!";
+// }
+
+// task-10
+
+const btnLock = document.querySelector(".lock");
+const btnUnLock = document.querySelector(".unlock");
+const input = document.querySelector("#input");
+
+btnLock.addEventListener("click", addLock);
+btnUnLock.addEventListener("click", removeLock);
+
+function addLock() {
+  input.setAttribute("disabled", true);
 }
 
-function addExsMark(event) {
-  if (event.target.nodeName !== "LI") {
-    return;
-  }
-  event.target.textContent += "!";
+function removeLock() {
+  input.removeAttribute("disabled");
 }

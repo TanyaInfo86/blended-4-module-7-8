@@ -89,16 +89,35 @@
 
 // task-8
 
-const spans = document.querySelectorAll("span");
-spans.forEach(span => span.addEventListener('click', setBgRed));
-function setBgRed(event) {
-    event.target.style.backgroundColor = "red";
-    event.target.addEventListener('click', setBgGreen);
-    event.target.removeEventListener('click', setBgRed);
+// const spans = document.querySelectorAll("span");
+// spans.forEach(span => span.addEventListener('click', setBgRed));
+// function setBgRed(event) {
+//     event.target.style.backgroundColor = "red";
+//     event.target.addEventListener('click', setBgGreen);
+//     event.target.removeEventListener('click', setBgRed);
+// }
+
+// function setBgGreen(event) {
+//     event.target.style.backgroundColor = "green";
+//     event.target.addEventListener('click', setBgRed);
+//     event.target.removeEventListener('click', setBgGreen);
+// }
+// task-9
+const list = document.querySelector("ol");
+const btn = document.querySelector("#btn");
+
+btn.addEventListener("click", createListItem);
+list.addEventListener("click", addExsMark);
+
+function createListItem() {
+  const newLi = document.createElement("li");
+  newLi.textContent = "пункт";
+  list.appendChild(newLi);
 }
 
-function setBgGreen(event) {
-    event.target.style.backgroundColor = "green";
-    event.target.addEventListener('click', setBgRed);
-    event.target.removeEventListener('click', setBgGreen);
+function addExsMark(event) {
+  if (event.target.nodeName !== "LI") {
+    return;
+  }
+  event.target.textContent += "!";
 }

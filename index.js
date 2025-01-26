@@ -62,14 +62,27 @@
 
 // task 6
 
-const title = document.querySelector("h1");
-const list = document.createElement("ul");
-let message = prompt();
-while (message !== null) {
-  const listItem = document.createElement("li");
-  listItem.textContent = message;
-  list.appendChild(listItem);
-  message = prompt();
-}
+// const title = document.querySelector("h1");
+// const list = document.createElement("ul");
+// let message = prompt();
+// while (message !== null) {
+//   const listItem = document.createElement("li");
+//   listItem.textContent = message;
+//   list.appendChild(listItem);
+//   message = prompt();
+// }
 
-title.after(list);
+// title.after(list);
+
+// task 7
+
+const wrap = document.querySelector(".wrap");
+
+wrap.addEventListener("mouseover", addTitlle);
+
+function addTitlle(event) {
+  if (event.target.nodeName !== "A") {
+    return;
+  }
+  event.target.setAttribute("title", event.target.textContent);
+}

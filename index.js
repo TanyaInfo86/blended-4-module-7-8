@@ -31,10 +31,10 @@
 //     // firstInput.value = secondInput.value;
 //     // secondInput.value = firstValue;
 
-//     [firstInput.value, secondInput.value] = [secondInput.value, firstInput.value] 
+//     [firstInput.value, secondInput.value] = [secondInput.value, firstInput.value]
 //     }
 
-    // task -4
+// task -4
 
 //     const pharagraphs =  document.querySelectorAll("p");
 //     const btn =  document.querySelector("button");
@@ -44,3 +44,18 @@
 // function changeTextcontent () {
 //     pharagraphs.forEach((pharagraph, index) => pharagraph.textContent = index + 1);
 // }
+
+// task 5
+
+const testInput = document.querySelector("#test");
+const resultInput = document.querySelector("#result");
+const button = document.querySelector("button");
+
+button.addEventListener("click", result);
+function result() {
+  if (isNaN(testInput.value)) {
+    alert("Ввели не число");
+  } else {
+    resultInput.value = testInput.value * testInput.value;
+  }
+}

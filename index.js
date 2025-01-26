@@ -76,13 +76,29 @@
 
 // task 7
 
-const wrap = document.querySelector(".wrap");
+// const wrap = document.querySelector(".wrap");
 
-wrap.addEventListener("mouseover", addTitlle);
+// wrap.addEventListener("mouseover", addTitlle);
 
-function addTitlle(event) {
-  if (event.target.nodeName !== "A") {
-    return;
-  }
-  event.target.setAttribute("title", event.target.textContent);
+// function addTitlle(event) {
+//   if (event.target.nodeName !== "A") {
+//     return;
+//   }
+//   event.target.setAttribute("title", event.target.textContent);
+// }
+
+// task-8
+
+const spans = document.querySelectorAll("span");
+spans.forEach(span => span.addEventListener('click', setBgRed));
+function setBgRed(event) {
+    event.target.style.backgroundColor = "red";
+    event.target.addEventListener('click', setBgGreen);
+    event.target.removeEventListener('click', setBgRed);
+}
+
+function setBgGreen(event) {
+    event.target.style.backgroundColor = "green";
+    event.target.addEventListener('click', setBgRed);
+    event.target.removeEventListener('click', setBgGreen);
 }
